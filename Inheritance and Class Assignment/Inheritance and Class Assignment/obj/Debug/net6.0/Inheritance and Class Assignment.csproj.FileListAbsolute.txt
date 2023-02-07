@@ -1,0 +1,15 @@
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\Inheritance and Class Assignment.csproj.AssemblyReference.cache
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\Inheritance and Class Assignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\Inheritance and Class Assignment.AssemblyInfoInputs.cache
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\Inheritance and Class Assignment.AssemblyInfo.cs
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\Inheritance and Class Assignment.csproj.CoreCompileInputs.cache
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\bin\Debug\net6.0\Inheritance and Class Assignment.exe
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\bin\Debug\net6.0\Inheritance and Class Assignment.deps.json
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\bin\Debug\net6.0\Inheritance and Class Assignment.runtimeconfig.json
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\bin\Debug\net6.0\Inheritance and Class Assignment.dll
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\bin\Debug\net6.0\Inheritance and Class Assignment.pdb
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\Inheritance and Class Assignment.dll
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\refint\Inheritance and Class Assignment.dll
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\Inheritance and Class Assignment.pdb
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\Inheritance and Class Assignment.genruntimeconfig.cache
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\Inheritance and Class Assignment\Inheritance and Class Assignment\obj\Debug\net6.0\ref\Inheritance and Class Assignment.dll
