@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.Tracing;
 using System.Drawing;
 
 namespace program
@@ -59,7 +60,7 @@ namespace program
             itemNumber = ItemNumber;
             brand = Brand;
             quantity = Quantity;
-            wattage= Wattage;
+            wattage = Wattage;
             color = Color;
             price = Price;
 
@@ -96,7 +97,7 @@ namespace program
                 price.ToString() + ";";
             return formattedString;
         }
-     
+
 
 
 
@@ -104,7 +105,7 @@ namespace program
     }
     public class refrigerators : appliances
     {
-        
+
         int doors = 0;
         double height = 0D;
         double width = 0D;
@@ -125,10 +126,10 @@ namespace program
             set { width = value; }
         }
 
-        public refrigerators (long ItemNumber, string Brand, int Quantity, double Wattage, string Color, double Price, int Doors, double Height, double Width) : base(ItemNumber, Brand, Quantity, Wattage, Color, Price)
+        public refrigerators(long ItemNumber, string Brand, int Quantity, double Wattage, string Color, double Price, int Doors, double Height, double Width) : base(ItemNumber, Brand, Quantity, Wattage, Color, Price)
         {
             doors = Doors;
-            height = Height; 
+            height = Height;
             width = Width;
             applianceName = "refrigerator";
 
@@ -157,7 +158,7 @@ namespace program
         public string Grade
         {
             get { return grade; }
-            set { grade = value; } 
+            set { grade = value; }
         }
         public double BatteryVoltage
         {
@@ -183,7 +184,7 @@ namespace program
                 price.ToString() + ";" +
                 grade + ";" +
                 batteryVoltage.ToString() + ";";
-                
+
             return formattedString;
         }
     }
@@ -194,7 +195,7 @@ namespace program
         public int Capacity
         {
             get { return capacity; }
-            set { capacity = value; }  
+            set { capacity = value; }
         }
         public char RoomType
         {
@@ -213,7 +214,7 @@ namespace program
         }
         public microwaves(long ItemNumber, string Brand, int Quantity, double Wattage, string Color, double Price, int Capacity, char RoomType) : base(ItemNumber, Brand, Quantity, Wattage, Color, Price)
         {
-            capacity= Capacity;
+            capacity = Capacity;
             if (RoomType != 'K' | RoomType != 'W')
             {
                 roomType = 'K';
@@ -264,7 +265,7 @@ namespace program
             set { finish = value; }
         }
 
-        public dishwashers(long ItemNumber, string Brand, int Quantity, double Wattage, string Color, double Price,string SoundRating, string Feature, string Finish) : base(ItemNumber, Brand, Quantity, Wattage, Color, Price)
+        public dishwashers(long ItemNumber, string Brand, int Quantity, double Wattage, string Color, double Price, string SoundRating, string Feature, string Finish) : base(ItemNumber, Brand, Quantity, Wattage, Color, Price)
         {
             soundRating = SoundRating;
             feature = Feature;
@@ -293,19 +294,102 @@ namespace program
 
 
 
-    
+
     public class program
     {
+
+        public static void menu()
+        {
+            int optionNum = 0;
+
+            while (optionNum != 5)
+            {
+                Console.WriteLine("Welcome to Modern Appliances! \nHow may we assist you? \n1-Check Out Appliance \n2-Find appliances by brand \n3-Display appliances by type \n4-Produce random appliance list \n5-Save & exit");
+                Console.WriteLine("Enter Option:");
+                optionNum = int.Parse(Console.ReadLine());
+                if (optionNum == 1)
+                {
+                    checkoutAppliance();
+                }
+                else if(optionNum == 2)
+                {
+                    //Find Appliance by brand
+                }
+                else if(optionNum == 3)
+                {
+                    //Display Appliances by type
+                }
+                else if (optionNum == 4)
+                {
+                    //Produce random appliance list
+                }
+                else
+                {
+                    Console.WriteLine("Please select a valid option");
+                }
+
+            }
+        }
+        public static void checkoutAppliance()
+        {
+            appliances checkOutAppliance = new appliances(0, "", 0, 0, "", 0);
+            Console.WriteLine("Enter the item number of an appliance");
+            string numberString = Console.ReadLine();
+            long itemNumber = long.Parse(numberString);
+            string filePath = "appliances.txt";
+            List<string> lineList = new List<string>();
+            List<string> firstWordList = new List<string>();
+            long itemNumberInList;
+
+            foreach (string line in File.ReadLines(filePath))
+            {
+                lineList.Clear();
+                foreach (string word in line.Split(';'))
+                {
+                    
+                    lineList.Add(word);
+                    firstWordList.Add(lineList[0]);
+                }
+
+                itemNumberInList = long.Parse(lineList[0]);
+                if (itemNumberInList == itemNumber)
+                {
+                    checkOutAppliance.ItemNumber = itemNumber;
+                    checkOutAppliance.Brand = lineList[1];
+                    checkOutAppliance.Quantity = int.Parse(lineList[2]);
+                    checkOutAppliance.Wattage = double.Parse(lineList[3]);
+                    checkOutAppliance.Color = lineList[4];
+                    checkOutAppliance.Price = double.Parse(lineList[5]);
+                    if (checkOutAppliance.Quantity > 0)
+                    {
+                        Console.WriteLine("Appliance \"" + itemNumber.ToString() + "\" has been checked out.");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Appliance is not available to be checked out.");
+
+                    }
+                }
+
+            }
+            if (!firstWordList.Contains(itemNumber.ToString()))
+            {
+                Console.WriteLine("No appliances found with that number");
+            }
+        }
+
 
 
 
         public static void Main()
         {
-            refrigerators fridge = new refrigerators(1234, "test", 8, 8, "Black", 8, 4, 8, 8);
+            menu();
         }
     }
-
-
 }
+
+
+
 
 
