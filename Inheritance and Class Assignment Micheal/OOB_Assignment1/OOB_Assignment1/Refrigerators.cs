@@ -28,7 +28,21 @@ namespace OOB_Assignment1
 
         public override string ToString()
         {
+            string NumDoorString = string.Empty;
+            if (NumDoor == 2)
+            {
+                NumDoorString = "Double Doors";
+            }
+            
+            else if (NumDoor == 3)
+            {
+                NumDoorString = "Three Doors";
+            }
 
+            else if (NumDoor == 4)
+            {
+                NumDoorString = "Four Doors";
+            }
 
             return
                 base.ToString() +
@@ -36,9 +50,5 @@ namespace OOB_Assignment1
                 $"Height: {Height}\n" +
                 $"Width: {Width}\n";
         }
-
-
-
-
     }
 }
