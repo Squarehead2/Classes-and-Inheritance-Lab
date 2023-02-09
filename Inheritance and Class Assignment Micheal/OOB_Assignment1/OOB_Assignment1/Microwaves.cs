@@ -22,6 +22,17 @@ namespace OOB_Assignment1
 
         public override string ToString()
         {
+            bool result;
+            string RoomTypeString = string.Empty;
+
+            if (result = RoomType.Equals('K'))
+            { RoomTypeString = "Kitchen"; }
+
+            else if (result = RoomType.Equals('W'))
+            {
+                RoomTypeString = "Work Site";
+            }
+            
             return base.ToString()+
                 $"Capacity: {Capacity}\n" +
                 $"Room Type:{RoomType}\n" ;
