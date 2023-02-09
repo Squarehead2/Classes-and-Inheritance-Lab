@@ -23,14 +23,18 @@ namespace OOB_Assignment1
 
         public override string ToString()
         {
+            string BatteryVottageString = string.Empty;
+
+            if (BatteryVottage == 18) 
+            {
+                BatteryVottageString = "Low";
+            }
+
+            else  BatteryVottageString = "High";
+            
             return base.ToString() +
                 $"Grade: {Grade}\n" +
                 $"Battery Voltage: {BatteryVottage}\n";
         }
-
-
-
-
-
     }
 }
