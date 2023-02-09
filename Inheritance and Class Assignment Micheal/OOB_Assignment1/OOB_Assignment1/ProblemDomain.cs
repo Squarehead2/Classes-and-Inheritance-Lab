@@ -102,7 +102,7 @@ namespace OOB_Assignment1
         public static void SelectMircrowaveWithRoomType()
         {
             Console.WriteLine("RoomWhere the microwave will be installed: K (kitchen) or W (work site):");
-            char preferRoomType = Convert.ToChar(Console.ReadLine());
+            char preferRoomType = Console.ReadLine()[0];
             foreach (Appliance obj in allApplicance)
             {
                 if (obj is Microwaves)
@@ -111,8 +111,7 @@ namespace OOB_Assignment1
 
                     if (preferRoomType== microwaves.RoomType) 
                     {
-                        Console.WriteLine(microwaves.ToString());
-                    
+                        Console.WriteLine(microwaves.ToString());                    
                     }
                 }
             }
