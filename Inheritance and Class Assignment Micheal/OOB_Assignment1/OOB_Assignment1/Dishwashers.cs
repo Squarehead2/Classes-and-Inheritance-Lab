@@ -23,6 +23,27 @@ namespace OOB_Assignment1
 
         public override string ToString()
         {
+            string SoundRatingString = string.Empty;
+
+            if (SoundRating == "Qt")
+            {
+                SoundRatingString = "Quietest";
+            }
+            else if (SoundRating == "Qr") 
+            {
+                SoundRatingString = "Quieter";
+            }
+
+            else if (SoundRating == "Qu") 
+            {
+                SoundRatingString = "Quiet";
+            }
+
+            else if (SoundRating == "M") 
+            {
+                SoundRatingString = "Moderate";
+            }
+            
             return base.ToString()+
                 $"Feature: {FeatureAndFinish}\n" +
                 $"Sound Rating:{SoundRating}\n";
