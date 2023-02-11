@@ -10,7 +10,7 @@ namespace OOB_Assignment1
     class Refrigerators : Appliance
     {
 
-        // create attributes for class Appliance
+        // create attributes for class Refrigerators
         private int numDoor;
         private int height;
         private int width;
