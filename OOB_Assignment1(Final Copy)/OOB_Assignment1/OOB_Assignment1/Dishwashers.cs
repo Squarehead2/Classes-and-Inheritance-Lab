@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace OOB_Assignment1
 {
+    // create class Dishwashers and make it inherited from class Appliance
     class Dishwashers : Appliance
     {
+        //create attributes for class Dishwashers
         private string featureAndFinish;
         private string soundRating;
 
+        //create public attributes to access private attributes
         public string FeatureAndFinish { get { return featureAndFinish; } set { featureAndFinish = value; } }
         public string SoundRating { get { return soundRating; } set { soundRating = value; } }
 
+        //create method to change the data value
         public Dishwashers()
         {
             FeatureAndFinish = string.Empty;
