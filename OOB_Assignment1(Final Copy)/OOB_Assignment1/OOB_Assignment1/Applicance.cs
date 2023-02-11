@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOB_Assignment1
 {
+    //create a Appliance Class
     class Appliance
     {
+        //create attributes
         private long itemNum;
         private string brand;
         private int quantity;
@@ -15,6 +17,7 @@ namespace OOB_Assignment1
         private string color;
         private double price;
 
+        //create public attributes access the private attributes in the class
         public long ItemNumber { get { return itemNum; } set { itemNum = value; } }
         public string Brand { get { return brand; } set { brand = value; } }
         public int Quantity { get { return quantity; } set { quantity = value; } }
@@ -22,6 +25,7 @@ namespace OOB_Assignment1
         public string Color { get { return color; } set { color = value; } }
         public double Price { get { return price; } set { price = value; } }
 
+        //Construct 
         public Appliance()
         {
             ItemNumber = 0;
@@ -33,7 +37,7 @@ namespace OOB_Assignment1
         }
 
        
-
+        // create method to change the type of attributes to string
         public override string ToString()
         {
             return
@@ -43,10 +47,6 @@ namespace OOB_Assignment1
                 $"Wattage: {Wattage}\n" +
                 $"Color:{Color}\n" +
                 $"Price: {Price}\n";
-
         }
-
-
-
     }
 }
