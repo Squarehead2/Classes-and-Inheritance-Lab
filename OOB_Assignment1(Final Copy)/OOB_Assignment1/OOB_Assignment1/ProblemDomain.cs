@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,29 +21,28 @@ using OOB_Assignment1.Properties;
 
 namespace OOB_Assignment1
 {
-    // create class ProblemDomain to run the program
     class ProblemDomain
     {
-        //create a list to access the data
+
         public static List<Appliance> allApplicance = new List<Appliance>();
-        
-        // put all methods into Main() method
         public static void Main()
         {
-            //start the program with a list
+
+            
+            
             ReadAndCreateAList();
             
-            //loops start
             int option = 0;
             while (option != 5)
             {
-                //ask the user to give and input and display different results accordingly
+
                 Console.WriteLine("Welcome to Modern Appliances!\nHow May We Assist You \n1 – Check out appliance \n2 – Find appliances by brand \n3 – Display appliances by type\n4 – Produce random appliance list\n5 – Save & exit\n");
                 Console.Write("Enter option: \n");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 if (option == 1)
                 {
+
                     checkoutAppliance();
                 }
 
@@ -58,8 +60,65 @@ namespace OOB_Assignment1
                 {
                     RandomPick();
                 }
+                else if(option == 5)
+                {
+                    SaveExit();
+                }
             }
         }
+
+        public static void SaveExit()
+        {
+            string workingDirectory = Environment.CurrentDirectory;
+            string filePath = Directory.GetParent(workingDirectory).Parent.Parent.FullName + "\\Resources\\appliances.txt";
+            File.WriteAllText(filePath, string.Empty);
+            List<string> formatList = new List<string>();
+            foreach(Appliance obj in allApplicance)
+            {
+                if (obj is Refrigerators)
+                {
+                    Refrigerators fridges = (Refrigerators)obj;
+                    string line;
+                    line = obj.ItemNumber.ToString() + ";" + obj.Brand + ";" + obj.Quantity.ToString() + ";" + obj.Wattage.ToString() + ";" + obj.Color + ";" + obj.Price.ToString() + ";" + fridges.formatForFile();
+                    using (StreamWriter sw = File.AppendText(filePath))
+                    {
+                        sw.WriteLine(line);
+                    }
+                }
+                else if (obj is Vacuums)
+                {
+                    Vacuums vacuums = (Vacuums)obj;
+                    string line;
+                    line = obj.ItemNumber.ToString() + ";" + obj.Brand + ";" + obj.Quantity.ToString() + ";" + obj.Wattage.ToString() + ";" + obj.Color + ";" + obj.Price.ToString() + ";" + vacuums.formatForFile();
+                    using (StreamWriter sw = File.AppendText(filePath))
+                    {
+                        sw.WriteLine(line);
+                    }
+                }
+                else if (obj is Microwaves)
+                {
+                    Microwaves microwaves = (Microwaves)obj;
+                    string line;
+                    line = obj.ItemNumber.ToString() + ";" + obj.Brand + ";" + obj.Quantity.ToString() + ";" + obj.Wattage.ToString() + ";" + obj.Color + ";" + obj.Price.ToString() + ";" + microwaves.formatForFile();
+                    using (StreamWriter sw = File.AppendText(filePath))
+                    {
+                        sw.WriteLine(line);
+                    }
+                }
+                else if (obj is Dishwashers)
+                {
+                    Dishwashers dishwashers = (Dishwashers)obj;
+                    string line;
+                    line = obj.ItemNumber.ToString() + ";" + obj.Brand + ";" + obj.Quantity.ToString() + ";" + obj.Wattage.ToString() + ";" + obj.Color + ";" + obj.Price.ToString() + ";" + dishwashers.formatForFile();
+                    using (StreamWriter sw = File.AppendText(filePath))
+                    {
+                        sw.WriteLine(line);
+                    }
+                }
+            }
+        }
+
+
 
         public static void SelectBrand() //This function takes an input from the user and converts it to a string that the function uses to compare it against a list of brand names that exist in the applianceList
         {
@@ -134,15 +193,12 @@ namespace OOB_Assignment1
                 Console.WriteLine("No appliance found with that item number.");
             }
         }
-        
-        // create method to ask users to select the appliance type
         public static void SelectApplianceType()
         {
             Console.WriteLine("Appliance Types\r\n1 – Refrigerators\r\n2 – Vacuums\r\n3 – Microwaves\r\n4 – Dishwashers\r\n");
             Console.Write("Enter type of appliance: \n");
             int option_type = Convert.ToInt32(Console.ReadLine());
             
-            // reading users' input and provide the relevant result
             if (option_type == 1) 
             {
                 SelectRefrigeratorWithDoors();
@@ -160,8 +216,6 @@ namespace OOB_Assignment1
 
             else SelectDishwasher();
         }
-        
-        // create a method to ask user to select refrigeratos doors and display result accordingly
         public static void SelectRefrigeratorWithDoors() 
         {   
             Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
@@ -180,8 +234,6 @@ namespace OOB_Assignment1
             }
 
         }
-        
-        // create a method to ask user to select vaccums voltage and display result accordingly
         public static void SelectVacuumsWithVoltage() 
         {
             Console.WriteLine("Enter battery voltage value. 18 V (low) or 24 V (high):");
@@ -199,8 +251,6 @@ namespace OOB_Assignment1
                 }
             }
         }
-        
-        //create a method to ask user to select microwaves room type and display result accordingly
         public static void SelectMircrowaveWithRoomType()
         {
             Console.WriteLine("RoomWhere the microwave will be installed: K (kitchen) or W (work site):");
@@ -220,8 +270,6 @@ namespace OOB_Assignment1
                 }
             }
         }
-        
-        // create a method to ask user to select dishwashers sound rating and display result accordingly
         public static void SelectDishwasher() 
         {
             Console.WriteLine("Enter the sound rating of the dishwasher: Qt (Quietest), Qr (Quieter), Qu(Quiet) or M (Moderate):");
@@ -238,8 +286,6 @@ namespace OOB_Assignment1
                 }
             }
         }
-        
-        // create method to allow user to randomly pick the appliance
         public static void RandomPick()
         {
             Console.WriteLine("Enter number of appliances:");
@@ -251,11 +297,10 @@ namespace OOB_Assignment1
                 Console.WriteLine(allApplicance[randomIndex].ToString());
             }
         }
-        
-        // create a method to read the data and make it as a list
         public static void ReadAndCreateAList()
         {
             string[] data = Resources.appliances.Split(Environment.NewLine);
+
 
             foreach (string line in data)
             {

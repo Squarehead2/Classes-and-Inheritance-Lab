@@ -33,7 +33,10 @@ How May We Assist You
 5 - Save & exit
 
 Enter option:
+1
+Enter the item number of an Appliance:
 1234567895
+No appliance found with that item number.
 Welcome to Modern Appliances!
 How May We Assist You
 1 - Check out appliance
@@ -259,23 +262,23 @@ Enter option:
 4
 Enter number of appliances:
 2
-Item Number:587065284
-Brand: Kenwood
-Quantity: 74
-Wattage: 1010
-Color:silver
-Price: 430
-Feature: Clean with Steam
-Sound Rating:Quiet
+Item Number:297972916
+Brand: Dyson
+Quantity: 104
+Wattage: 1400
+Color:bronze
+Price: 530
+Grade: Commercial
+Battery Voltage: High
 
-Item Number:383477937
-Brand: Miele
-Quantity: 201
-Wattage: 2350
-Color:white
-Price: 179.9
-Capacity: 1.8
-Room Type:Kitchen
+Item Number:244733872
+Brand: Bosch
+Quantity: 133
+Wattage: 700
+Color:grey
+Price: 430
+Grade: Commercial
+Battery Voltage: High
 
 Welcome to Modern Appliances!
 How May We Assist You
@@ -288,5 +291,5 @@ How May We Assist You
 Enter option:
 5
 
-C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\OOB_Assignment1(Michael Revised)\OOB_Assignment1\OOB_Assignment1\bin\Debug\net6.0\OOB_Assignment1.exe (process 6308) exited with code 0.
+C:\Users\willi\OneDrive\Documents\School\Sem 2\Object Orientated 2\Random\OOB_Assignment1(Final Copy)\OOB_Assignment1\OOB_Assignment1\bin\Debug\net6.0\OOB_Assignment1.exe (process 21740) exited with code 0.
 Press any key to close this window . . .

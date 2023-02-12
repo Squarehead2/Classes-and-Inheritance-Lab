@@ -12,11 +12,9 @@ namespace OOB_Assignment1
         //create attributes for class Dishwashers
         private string featureAndFinish;
         private string soundRating;
-
         //create public attributes to access private attributes
         public string FeatureAndFinish { get { return featureAndFinish; } set { featureAndFinish = value; } }
         public string SoundRating { get { return soundRating; } set { soundRating = value; } }
-
         //create method to change the data value
         public Dishwashers()
         {
@@ -51,6 +49,16 @@ namespace OOB_Assignment1
             return base.ToString()+
                 $"Feature: {FeatureAndFinish}\n" +
                 $"Sound Rating:{SoundRatingString}\n";
+        }
+        //Function to format dishwasher attributes to be properly appended to file
+        public string formatForFile()
+        {
+            string formattedString =
+
+                featureAndFinish + ";" +
+                soundRating + ";";
+                
+            return formattedString;
         }
     }
 }
