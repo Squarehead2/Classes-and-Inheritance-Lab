@@ -67,23 +67,24 @@ namespace OOB_Assignment1
                 }
             }
         }
-
+        //method used to append all the appliance data into the txt file in the same format it was original open in
         public static void SaveExit()
         {
+            //discover directory of resource folder
             string workingDirectory = Environment.CurrentDirectory;
             string filePath = Directory.GetParent(workingDirectory).Parent.Parent.FullName + "\\Resources\\appliances.txt";
             File.WriteAllText(filePath, string.Empty);
             List<string> formatList = new List<string>();
-            foreach(Appliance obj in allApplicance)
+            foreach(Appliance obj in allApplicance) //loop for each object in the appliance list
             {
-                if (obj is Refrigerators)
+                if (obj is Refrigerators)//If else statements to determine which type of appliance ecah object is
                 {
                     Refrigerators fridges = (Refrigerators)obj;
                     string line;
                     line = obj.ItemNumber.ToString() + ";" + obj.Brand + ";" + obj.Quantity.ToString() + ";" + obj.Wattage.ToString() + ";" + obj.Color + ";" + obj.Price.ToString() + ";" + fridges.formatForFile();
                     using (StreamWriter sw = File.AppendText(filePath))
                     {
-                        sw.WriteLine(line);
+                        sw.WriteLine(line); //Write the formatted info into the txt file
                     }
                 }
                 else if (obj is Vacuums)
